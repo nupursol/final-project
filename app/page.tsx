@@ -3,6 +3,7 @@ import Shows from "@/components/Shows";
 import Music from "@/components/Music";
 import { useState } from "react";
 import Jokes from "@/components/Jokes";
+import Books from "@/components/Books";
 
 const entertainmentOptions = {
   Jokes: ["Dad Joke", "Knock Knock", "General", "Programming"],
@@ -78,6 +79,9 @@ export default function HomePage() {
                   )}
                   {selectedForm === "Jokes" && (
                     <Jokes subgenre = {selectedSubgenre} />
+                  )}
+                  {selectedForm === "Books" && (
+                      <Books subgenre = {selectedSubgenre} />
                   )}
               </div>
             </div>
