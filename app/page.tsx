@@ -1,12 +1,13 @@
 "use client";
-import { useState } from "react";
 import Shows from "@/components/Shows";
+import Music from "@/components/Music";
+import { useState } from "react";
 
 const entertainmentOptions = {
   Jokes: ["Dad Joke", "Knock Knock", "General", "Programming"],
-  Show: ["Drama", "Romance", "Action", "Comedy", "Crime", "Science-Fiction"],
+  Show:  ["Drama", "Romance", "Action", "Comedy", "Crime", "Science-Fiction"],
   Books: ["Science Fiction", "Young Adult", "Poetry", "Action"],
-  Music: ["Pop", "Hip-Hop/Rap", "Jazz", "R&B", "Country", "Classical"],
+  Music: ["Pop", "Hip-Hop/Rap", "Rock", "R&B/Soul", "Alternative", "Jazz"],
 };
 
 export default function HomePage() {
@@ -70,6 +71,9 @@ export default function HomePage() {
                 </p>
                   {selectedForm === "Show" && (
                       <Shows subgenre={selectedSubgenre} />
+                  )}
+                  {selectedForm === "Music" && (
+                      <Music subgenre={selectedSubgenre} />
                   )}
               </div>
             </div>
