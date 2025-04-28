@@ -13,11 +13,11 @@ const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import animationData from "@/public/lottie/entertainment.json";
 
 const entertainmentOptions = {
-    Jokes: ["Dad Joke", "Knock Knock", "General", "Programming"],
-    Show: ["Drama", "Romance", "Action", "Comedy", "Crime", "Science-Fiction"],
-    Books: ["Science Fiction", "Young Adult", "Poetry", "Action"],
-    Music: ["Pop", "Hip-Hop/Rap", "Rock", "R&B/Soul", "Alternative", "Jazz"],
-    Trivia: ["General Knowledge", "Science: Computers", "History", "Sports", "Entertainment: Music"],
+  Jokes: ["General", "Programming", "Knock Knock", "Dad Joke"],
+  Show:  ["Drama", "Romance", "Action", "Comedy", "Crime", "Science-Fiction"],
+  Books: ["Science Fiction", "Young Adult", "Poetry", "Action"],
+  Music: ["Pop", "Hip-Hop/Rap", "Rock", "R&B/Soul", "Alternative", "Jazz"],
+  Trivia: ["General Knowledge", "Science: Computers", "History", "Sports", "Entertainment: Music"]
 };
 
 export default function HomePage() {
