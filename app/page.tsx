@@ -4,12 +4,14 @@ import Music from "@/components/Music";
 import { useState } from "react";
 import Jokes from "@/components/Jokes";
 import Books from "@/components/Books";
+import Trivia from "@/components/Trivia";
 
 const entertainmentOptions = {
   Jokes: ["Dad Joke", "Knock Knock", "General", "Programming"],
   Show:  ["Drama", "Romance", "Action", "Comedy", "Crime", "Science-Fiction"],
   Books: ["Science Fiction", "Young Adult", "Poetry", "Action"],
   Music: ["Pop", "Hip-Hop/Rap", "Rock", "R&B/Soul", "Alternative", "Jazz"],
+  Trivia: ["General Knowledge", "Science: Computers", "History", "Sports", "Entertainment: Music"]
 };
 
 export default function HomePage() {
@@ -82,6 +84,9 @@ export default function HomePage() {
                   )}
                   {selectedForm === "Books" && (
                       <Books subgenre = {selectedSubgenre} />
+                  )}
+                  {selectedForm === "Trivia" && (
+                    <Trivia category= {selectedSubgenre}/>
                   )}
               </div>
             </div>
