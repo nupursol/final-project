@@ -7,7 +7,7 @@ import Books from "@/components/Books";
 import Trivia from "@/components/Trivia";
 
 const entertainmentOptions = {
-  Jokes: ["Dad Joke", "Knock Knock", "General", "Programming"],
+  Jokes: ["General", "Programming", "Knock Knock", "Dad Joke"],
   Show:  ["Drama", "Romance", "Action", "Comedy", "Crime", "Science-Fiction"],
   Books: ["Science Fiction", "Young Adult", "Poetry", "Action"],
   Music: ["Pop", "Hip-Hop/Rap", "Rock", "R&B/Soul", "Alternative", "Jazz"],
