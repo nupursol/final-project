@@ -63,7 +63,7 @@ export default function Jokes ( {subgenre}: JokesProps) {
         <div className="mt-4 flex justify-end">
             <button 
                 onClick={fetchJoke}
-                className="px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+                className="px-3 py-1 text-sm bg-purple-500 text-white rounded hover:bg-blue-600 transition"
             >
                 Next Joke
             </button>
