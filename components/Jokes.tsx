@@ -60,8 +60,7 @@ export default function Jokes ( {subgenre}: JokesProps) {
         <div className="p-4 mt-4 bg-gray-200 rounded-lg shadow">
         <p className="text-lg font-semibold text-gray-700">{joke.setup}</p>
         <p className="mt-2 text-gray-900 italic">{joke.punchline}</p>
-        <div className="mt-4 flex justify-between">
-            <span className="text-sm text-gray-500">Category: {joke.type}</span>
+        <div className="mt-4 flex justify-end">
             <button 
                 onClick={fetchJoke}
                 className="px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 transition"
