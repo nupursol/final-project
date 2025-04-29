@@ -72,7 +72,7 @@ export default function Books({subgenre}: BooksProps) {
                 // lists the book's cover, name, author, and year published
                 books.map((book) => (
                     <div key={book.key} className="flex items-center p-4">
-                        <div className="w-1/5 mr-1 border-r-2 border-r-green-200 pr-4">
+                        <div className="w-1/5 mr-1 border-r-2 border-r-pink-400 pr-4">
                             {book.cover_edition_key ? (
                             <img src={`https://covers.openlibrary.org/b/olid/${book.cover_edition_key}-M.jpg`} alt={book.title}/>
                                 ) : (
