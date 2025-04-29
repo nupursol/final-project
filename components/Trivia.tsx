@@ -87,9 +87,9 @@ export default function Trivia({ category }: TriviaProps) {
         fetchData();
     }, [categoryId]);
 
-    function handleAnswerClick(selected: string, correct: string) {
+    function handleAnswerClick(selected: string) {
         setSelectedAnswer(selected);
-        setShowAnswer(true);  
+        setShowAnswer(true);
     }
 
     if (loading) {
@@ -110,7 +110,7 @@ export default function Trivia({ category }: TriviaProps) {
                             {q.all_answers.map((answer, i) => (
                                 <button 
                                 key={i} 
-                                onClick={() => handleAnswerClick(answer, q.correct_answer)}
+                                onClick={() => handleAnswerClick(answer)}
                                 className="my-1 p-2 border rounded w-3/4 text-gray-800 font-semibold hover:bg-gray-100 transition"
                                 >
                                     {answer}
