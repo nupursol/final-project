@@ -18,7 +18,7 @@ interface Song {
 }
 
 interface SongsProps {
-    subgenre: string;   // song genre as a string
+    subgenre: string;   // song genre name
 }
 
 export default function Music({ subgenre }: SongsProps) {
@@ -47,9 +47,9 @@ export default function Music({ subgenre }: SongsProps) {
 
     useEffect(() => {
         async function fetchData(): Promise<void> {
-            // fetch top songs in input subgenre from iTunes API
+            // fetch top 10 songs in input subgenre from iTunes API
             const res = await fetch(`https://itunes.apple.com/us/rss/topsongs/genre=${subgenreId}/json`);
-            // json structure is as follows: res.json().feed.entry, where entry is a list of songs
+            // json structure is as follows: res.json().feed.entry, where entry is a list of songs and associated data
             const { feed } = await res.json();
             const { entry }: { entry: Song[] } = feed;
             setSongs(entry);
@@ -77,33 +77,39 @@ export default function Music({ subgenre }: SongsProps) {
                 </p>
             ) : (
                 songs.map((song) => (
-                    <div
+                    <div    // row div for song information
                         key={song.id.attributes["im:id"]}
                         className="p-4 bg-white rounded-lg flex flex-row items-center gap-15"
                     >
+                        {/* col div for album cover art and audio preview */}
                         <div className="flex flex-col items-center gap-3">
+                            {/* album cover art */}
                             <Image
-                                src={song["im:image"][2].label}
-                                alt={song["im:collection"]["im:name"].label}
+                                src={song["im:image"][2].label}                 // link to image
+                                alt={song["im:collection"]["im:name"].label}    // album name
                                 width={170}
                                 height={170}
                                 className="rounded object-cover"
                             />
 
-                            <audio src={song.link[1].attributes.href} controls />
+                            {/* audio preview */}
+                            <audio src={song.link[1].attributes.href} controls /> {/* link to audio */}
                         </div>
 
+                        {/* col div for song name, album name, artist name, and release date */}
                         <div className="flex flex-col gap-2">
-                            <Link href={song.id.label}>
-                                <h2 className="text-lg font-bold">{song["im:name"].label}</h2>
+                            <Link href={song.id.label}> {/* link to song in album */}
+                                <h2 className="text-lg font-bold">{song["im:name"].label}</h2> {/* song name */}
                             </Link>
 
+                            {/* album name */}
                             <h4 className="text-sm font-medium">{song["im:collection"]["im:name"].label}</h4>
 
-                            <Link href={song["im:artist"].attributes.href}>
-                                <h3 className="text-base font-semibold">{song["im:artist"].label}</h3>
+                            <Link href={song["im:artist"].attributes.href}> {/* link to artist profile */}
+                                <h3 className="text-base font-semibold">{song["im:artist"].label}</h3> {/* artist name */}
                             </Link>
 
+                            {/* release date */}
                             <h5 className="text-xs font-normal">{song["im:releaseDate"].attributes.label}</h5>
                         </div>
                     </div>
