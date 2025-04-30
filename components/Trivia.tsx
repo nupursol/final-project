@@ -129,7 +129,6 @@ export default function Trivia({ category }: TriviaProps) {
                             )}
                             </div>
                         )}
-
                         <p className="text-sm text-gray-500 mt-2">
                             Category: {q.category} | Difficulty: {q.difficulty}
                         </p>

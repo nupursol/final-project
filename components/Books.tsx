@@ -1,4 +1,6 @@
-// This component by Liala Jama
+/**
+ *   Liala Jama's component
+ */
 "use client"
 import {useEffect, useState} from "react";
 
